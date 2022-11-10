@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/clockFragment"
+        android:name="com.sariaydinalparslan.weatherapp.ui.ClockFragment"
+        android:label="fragment_clock"
+        tools:layout="@layout/fragment_clock" >
+        <action
+            android:id="@+id/action_clockFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/weatherFragment"
+        android:name="com.sariaydinalparslan.weatherapp.ui.WeatherFragment"
+        android:label="fragment_weather"
+        tools:layout="@layout/fragment_weather" >
+        <action
+            android:id="@+id/action_weatherFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.sariaydinalparslan.weatherapp.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/actionClock"
+            app:destination="@id/clockFragment" />
+        <action
+            android:id="@+id/actionWeather"
+            app:destination="@id/weatherFragment" />
+        <action
+            android:id="@+id/actiontime"
+            app:destination="@id/timeDifFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/timeDifFragment"
+        android:name="com.sariaydinalparslan.weatherapp.ui.TimeDifFragment"
+        android:label="fragment_time_dif"
+        tools:layout="@layout/fragment_time_dif" >
+        <action
+            android:id="@+id/action_timeDifFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+</navigation>

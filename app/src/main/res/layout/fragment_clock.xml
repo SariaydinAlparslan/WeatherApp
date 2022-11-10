@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@drawable/bes"
+    tools:context=".ui.ClockFragment">
+
+    <TextView
+        android:id="@+id/weather"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="50dp"
+        android:layout_weight="2"
+        android:text="Clock"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:layout_gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="2.5"
+        android:background="#4DFFFFFF"
+        android:orientation="horizontal"
+        android:padding="5dp">
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:background="#55FFFFFF"
+        app:endIconMode="clear_text">
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_city_name_clock"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="City Name"
+            android:inputType="text"
+            android:gravity="center"
+            android:lines="1"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/img_search_city"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="10dp"
+            android:src="@drawable/search_24" />
+
+    </LinearLayout>
+
+    <WebView
+        android:id="@+id/web"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_margin="50dp"
+        android:layout_height="match_parent" />
+
+
+
+</LinearLayout>
