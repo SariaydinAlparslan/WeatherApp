@@ -1,8 +1,10 @@
 package com.sariaydinalparslan.weatherapp.ui
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +13,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import com.sariaydinalparslan.countrylist.util.downloadfromUrl
 import com.sariaydinalparslan.countrylist.util.mySingleton
+import com.sariaydinalparslan.countrylist.util.placeholderProgressBar
 import com.sariaydinalparslan.weatherapp.R
 import com.sariaydinalparslan.weatherapp.viewmodel.MainViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -22,6 +26,7 @@ class WeatherFragment : Fragment() {
     private lateinit var viewModel: MainViewModel
     private lateinit var GET: SharedPreferences
     private lateinit var SET: SharedPreferences.Editor
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +41,7 @@ class WeatherFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         GET = this.requireActivity().getSharedPreferences("com.sariaydinalparslan.weatherapp", AppCompatActivity.MODE_PRIVATE)!!
 
         SET = GET.edit()
@@ -82,20 +88,20 @@ class WeatherFragment : Fragment() {
         addFavourite1.setOnClickListener {
             lottie1.visibility = View.VISIBLE
             lottie1.playAnimation()
-            mySingleton.favourite1 = tv_city_name.text.toString()
-
+            val favori1= tv_city_name.text.toString()
+            GET.edit().putString("favori1",favori1).apply()
         }
         addFavourite2.setOnClickListener {
             lottie1.visibility = View.VISIBLE
             lottie1.playAnimation()
-            mySingleton.favourite2 = tv_city_name.text.toString()
-
+            val favori2 = tv_city_name.text.toString()
+            GET.edit().putString("favori2",favori2).apply()
         }
         addFavourite3.setOnClickListener {
             lottie1.visibility = View.VISIBLE
             lottie1.playAnimation()
-            mySingleton.favourite3 = tv_city_name.text.toString()
-
+            val favori3= tv_city_name.text.toString()
+            GET.edit().putString("favori3",favori3).apply()
         }
 
     }

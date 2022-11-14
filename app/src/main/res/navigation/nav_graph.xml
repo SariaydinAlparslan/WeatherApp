@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mainFragment">
+    app:startDestination="@id/splashFragment">
 
     <fragment
         android:id="@+id/clockFragment"
@@ -45,6 +45,15 @@
         tools:layout="@layout/fragment_time_dif" >
         <action
             android:id="@+id/action_timeDifFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.sariaydinalparslan.weatherapp.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/actionMain"
             app:destination="@id/mainFragment" />
     </fragment>
 </navigation>

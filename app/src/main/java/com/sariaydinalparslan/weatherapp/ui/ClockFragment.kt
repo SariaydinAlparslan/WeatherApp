@@ -34,6 +34,7 @@ class ClockFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding.imgSearchCity.setOnClickListener {
             val cityName =binding.edtCityNameClock.text.toString()
             web.webViewClient = WebViewClient()
@@ -49,5 +50,6 @@ class ClockFragment : Fragment() {
         super.onDestroy()
         _binding = null
     }
+
 
 }
